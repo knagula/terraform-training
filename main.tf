@@ -1,22 +1,22 @@
 # akamai_group
 data "akamai_group" "my_group_id" {
-    group_name  = "My group name"
-    contract_id = "ctr_C-0N7RAC7"
+    group_name  = "Akamai Technologies - Assets-1-3CV382"
+    contract_id = "1-3CV382"
 }
 
 # akamai_appsec_configuration
 data "akamai_appsec_configuration" "my_configuration" {
-    name = "my appsec config"
+    name = "AHSecTest"
 }
 
 # akamai_property
 data "akamai_property" "my_property" {
-    name = "my-property-1"
+    name = "test.test-pipeline"
     version = "1"
 }
 
 output "my_group_id" {
-    value = data.akamai_group.my_group_id.group_name
+    value = data.akamai_group.my_group_id.id
 }
 
 output "my_configuration" {
