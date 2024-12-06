@@ -11,7 +11,7 @@ data "akamai_appsec_configuration" "my_configuration" {
 
 # akamai_property
 data "akamai_property" "my_property" {
-    name = "test.test-pipeline"
+    name = "knagula-tf-test"
     version = "1"
 }
 
