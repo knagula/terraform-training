@@ -9,6 +9,6 @@ terraform {
 }
  
 provider "akamai" {
-  edgerc         = "~/.edgerc"
-  config_section = "default"
+  edgerc         = var.edgerc_path #"~/.edgerc"
+  config_section = var.config_section #"default"
 }
