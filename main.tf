@@ -14,15 +14,3 @@ data "akamai_property" "my_property" {
     name = "knagula-tf-test"
     version = "1"
 }
-
-output "my_group_id" {
-    value = data.akamai_group.my_group_id.id
-}
-
-output "my_configuration" {
-  value = data.akamai_appsec_configuration.my_configuration.host_names
-}
-
-output "my_property" {
-  value = data.akamai_property.my_property.name
-}
