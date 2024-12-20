@@ -14,3 +14,7 @@ data "akamai_property" "my_property" {
     name = "knagula-tf-test"
     version = "1"
 }
+
+locals {
+    notes = "TF-3001/${data.akamai_group.my_group_id.id}"
+}
