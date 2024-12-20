@@ -18,3 +18,15 @@ data "akamai_property" "my_property" {
 locals {
     notes = "TF-3001/${data.akamai_group.my_group_id.id}"
 }
+
+locals {
+    var1 = ceil(12.33)
+}
+
+locals {
+    var2 = replace("knagula_property_name", "_", " ")
+}
+
+locals {
+    var3 = length(["apple", "ball", "cat"]) + local.var1
+}
