@@ -14,7 +14,7 @@ resource "akamai_edge_hostname" "knagula_edge_hostname" {
   product_id    = "prd_Site_Accel"
   contract_id   = data.akamai_group.my_group_id.contract_id
   group_id      = data.akamai_group.my_group_id.id
-  edge_hostname = "www.knagula.tf.edgetest.com.edgesuite.net"
+  edge_hostname = var.ab_test == "A" ? "www.knagula.tf2.edgetest.edgesuite.net" : "www.knagula.tf3.edgetest.edgesuite.net"
   ip_behavior   = "IPV4"
   ttl           = 300
   timeouts {
@@ -23,17 +23,17 @@ resource "akamai_edge_hostname" "knagula_edge_hostname" {
 }
 
 # property
-resource "akamai_property" "knagula_property" {
-    name    	= "knagula-tf-test01"
-    product_id  = "prd_Site_Accel"
-    contract_id = data.akamai_group.my_group_id.contract_id
-    group_id    = data.akamai_group.my_group_id.id
-    hostnames {
-      cname_from             = "www.knagula.tf.property.example.com"
-      cname_to 	             = "www.knagula.tf.edgetest.com.edgesuite.net" # akamai_edge_hostname.knagula_edge_hostname.edge_hostname
-      cert_provisioning_type = "DEFAULT"
-    }
-}
+# resource "akamai_property" "knagula_property" {
+#     name    	= "knagula-tf-test01"
+#     product_id  = "prd_Site_Accel"
+#     contract_id = data.akamai_group.my_group_id.contract_id
+#     group_id    = data.akamai_group.my_group_id.id
+#     hostnames {
+#       cname_from             = "www.knagula.tf.property.example.com"
+#       cname_to 	             = "www.knagula.tf2.edgetest.edgesuite.net" # akamai_edge_hostname.knagula_edge_hostname.edge_hostname
+#       cert_provisioning_type = "DEFAULT"
+#     }
+# }
 
 # // Your default rule information
 # data "akamai_property_rules_builder" "my_default_rule" {
