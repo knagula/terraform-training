@@ -30,3 +30,7 @@ locals {
 locals {
     var3 = length(["apple", "ball", "cat"]) + local.var1
 }
+
+locals {
+  hostnames = [for item in var.apps : "${item}.example.com"]
+}

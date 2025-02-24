@@ -25,3 +25,7 @@ output "conditional_test" {
 # output "var3" {
 #   value = local.var3
 # }
+
+output "hostname" {
+  value = local.hostnames
+}
